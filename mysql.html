@@ -1,0 +1,19 @@
+CREATE DATABASE makanan_db;
+
+USE makanan_db;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE foods (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    price DECIMAL(10, 2)
+);
+
+-- Tambahkan pengguna untuk autentikasi (jangan lupa hash password)
+INSERT INTO users (username, password) VALUES ('admin', '$pbkdf2-sha256$29000$1zNfJcAyN2d4sG45fzqkOQ$78xlXw8mxHGA6l4vwcdgYgOsCEYz5jmtqsNhXYJ5ITg');
